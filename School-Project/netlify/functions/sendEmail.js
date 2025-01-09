@@ -33,7 +33,7 @@ exports.handler = async (event) => {
         // Email content
         const mailOptions = {
             from: `"Post Submission" <${process.env.SMTP_USER}>`, // Sender email
-            to: 'your-email@example.com', // Replace with your recipient email
+            to: 'yiszoneemail@gmail.com', // Replace with your recipient email
             subject: `New Post Submission: ${data.type}`,
             text: `You've received a new post submission:\n\nType: ${data.type}\nEmail: ${data.email}\nDetails: ${data.details}`,
             html: `

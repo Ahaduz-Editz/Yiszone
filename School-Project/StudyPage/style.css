@@ -1,0 +1,272 @@
+body {
+    background-color: #191919;
+    font-family: 'Inder', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    display: block;
+    border-top: 10px;
+    border-bottom: 10px solid #151515;
+    border-radius: 20px;
+    transition: padding 0.1s ease-out, border-bottom 0.1s ease-out; 
+}
+
+.sidebar a:hover {
+    padding: 10px 20px; 
+    color: rgb(255, 255, 255);
+    border-bottom: 5px solid #151515;  
+}
+
+.sidebar a.after-hover {
+    animation: returnToOriginal 0.2s forwards; 
+}
+
+@keyframes returnToOriginal {
+    from {
+        padding: 10px 20px; 
+        border-bottom: 5px solid #151515; 
+    }
+    to {
+        padding: 15px 20px; 
+        border-bottom: 10px solid #151515; 
+    }
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar.active {
+    left: 0;
+}
+.close-btn p {
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+.openbtn {
+    cursor: pointer;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    transition: .3s ease;
+    margin-left: 20px;
+}
+
+.openbtn:hover {
+    color: #9a9a9a;
+}
+
+
+
+.hero-card {
+    background-image: linear-gradient(to bottom, #3B1E1E, #003337);
+    height: 400px;
+    width: 800px;
+    margin: 100px auto; /* Center horizontally */
+    border-radius: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    font-size: 18px ;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .hero-card {
+        width: 90%; /* Adjust width */
+        height: 350px; /* Reduce height slightly */
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-card {
+        width: 95%; /* Take most of the screen width */
+        height: 300px;
+        margin-top: 30px;
+    }
+    .hero-card-text p {
+        font-size: 16px; /* Adjust text size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-card {
+        width: 100%; /* Full screen width */
+        height: 250px;
+        border-radius: 20px; /* Smaller radius for small screens */
+    }
+    .hero-card-text p {
+        font-size: 14px; /* Smaller text for mobile */
+        padding: 10px; /* Add some padding */
+    }
+}
+.calendar-title p {
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.study-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.nov-cal-std7, .nov-cal-std6 {
+    background-size: cover;
+    width: 100%; 
+    max-width: 258px; 
+    height: 170px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.nov-cal-std7 p, .nov-cal-std6 p {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.study h3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #FF4F4F;
+    color: black;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s ease;
+    display: block;
+    width: max-content;
+    margin: 20px auto; 
+}
+.btn:hover {
+    background-color: #fe3434;
+}
+
+
+@media (max-width: 768px) {
+    .study-content {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    
+    .nov-cal-std7, .nov-cal-std6 {
+        width: 60%; 
+        max-width: none; 
+        height: auto; 
+    }
+
+    .btn {
+        font-size: 14px; 
+        padding: 8px 16px; 
+    }
+
+   
+    .study-title p {
+        font-size: 24px; 
+    }
+
+    .nov-cal-std7 p, .nov-cal-std6 p {
+        font-size: 13px; 
+    }
+}
+.nov-cal-std7 {
+    background-image: linear-gradient(to bottom right, #727272, #005f72);
+}
+.nov-cal-std6 {
+    background-image: linear-gradient(to bottom right, #727272, #007204);
+}

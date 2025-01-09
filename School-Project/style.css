@@ -1,0 +1,785 @@
+body {
+    background-color: #191919;
+    font-family: 'Inder', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    display: block;
+    border-top: 10px;
+    border-bottom: 10px solid #151515;
+    border-radius: 20px;
+    transition: padding 0.1s ease-out, border-bottom 0.1s ease-out; 
+}
+
+.sidebar a:hover {
+    padding: 10px 20px; 
+    color: rgb(255, 255, 255);
+    border-bottom: 5px solid #151515;  
+}
+
+.sidebar a.after-hover {
+    animation: returnToOriginal 0.2s forwards; 
+}
+
+@keyframes returnToOriginal {
+    from {
+        padding: 10px 20px; 
+        border-bottom: 5px solid #151515; 
+    }
+    to {
+        padding: 15px 20px; 
+        border-bottom: 10px solid #151515; 
+    }
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar.active {
+    left: 0;
+}
+.close-btn p {
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+.openbtn {
+    cursor: pointer;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    transition: .3s ease;
+    margin-left: 20px;
+}
+
+.openbtn:hover {
+    color: #9a9a9a;
+}
+.hero {
+    position: relative;
+    width: 60%;
+    max-width: 1000px;
+    background-color: #101010;
+    border-radius: 20px;
+    padding: 100px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+    margin-top: 125px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: left; 
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
+
+.hero-shape {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 50%;
+    filter: blur(80px); 
+    z-index: 1;
+}
+
+
+@media (max-width: 1024px) {
+    .hero {
+        width: 80%;
+        padding: 60px;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+
+    .hero-shape {
+       display: hidden;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        width: 90%;
+        padding: 40px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .hero-shape {
+        display: hidden;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        width: 95%;
+        padding: 7px;
+        margin-top: 100px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-shape {
+        display: hidden;
+    }
+}
+.features {
+    font-family: 'Inder', sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+.features-contents p {
+    font-size: 30px;
+    margin: 100px auto 0;
+    text-align: center;
+}
+
+.features-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 60px;
+    gap: 50px;
+}
+
+.study-card, .rumors-card, .events-card, .confessions-card, .updates-card {
+    width: 258px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.study-card {
+    background-image: linear-gradient(to bottom right, #FF0000, #033C48);
+}
+
+.rumors-card {
+    background-image: linear-gradient(to top left, #000000, #272727, #000);
+}
+
+.events-card {
+    background-image: linear-gradient(to bottom left, #551212, #6d1717, #BB2727);
+}
+
+.confessions-card {
+    background-image: linear-gradient(to bottom, #FF00E5, #000000);
+    margin-right: 300px;
+}
+
+.updates-card {
+    background-image: linear-gradient(to bottom right, #008597, #7ef0ff);
+    margin-left: -300px;
+}
+
+
+.study-card a, .rumors-card a, .events-card a, .confessions-card a, .updates-card a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    cursor: default;
+    margin: 15px 210px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.study-card a:hover, .rumors-card a:hover, .events-card a:hover, .confessions-card a:hover, .updates-card a:hover {
+    background: #7b7b7b;
+    border-color: #7b7b7b;
+    transform: scale(1.2);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .features-cards {
+        flex-direction: column;
+        padding: 20px;
+        gap: 30px;
+    }
+    
+    .study-card, .rumors-card, .events-card, .confessions-card, .updates-card {
+        width: 200px;
+        height: 200px;
+    }
+
+    .confessions-card {
+        margin-right: 0;
+    }
+
+    .updates-card {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .features-cards {
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .study-card, .rumors-card, .events-card, .confessions-card, .updates-card {
+        width: 100%;
+        max-width: 258px;
+        height: auto;
+    }
+
+    .study-card a, .rumors-card a, .events-card a, .confessions-card a, .updates-card a {
+        margin: 0 auto;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .features-cards {
+        gap: 60px;
+    }
+}
+.study {
+    justify-content: center;
+    align-items: center;
+}
+
+.study-title p {
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.study-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.nov-cal-std7, .nov-cal-std6 {
+    background-size: cover;
+    width: 100%; 
+    max-width: 258px; 
+    height: 170px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.nov-cal-std7 p, .nov-cal-std6 p {
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.study h3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #FF4F4F;
+    color: black;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s ease;
+    display: block;
+    width: max-content;
+    margin: 20px auto; 
+}
+.btn:hover {
+    background-color: #c62525;
+    font-size: 18px;
+    color: whitesmoke;
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 2px #d66969;
+    animation: rgb 1s infinite;
+}
+
+@keyframes rgb {
+    0% {
+        box-shadow: inset 0 0 0 2px #d66969;
+    }
+    50% {
+        box-shadow: inset 0 0 0 2px #69d691;
+    }
+    100% {
+        box-shadow: inset 0 0 0 2px #6974d6;
+    }
+}
+
+@media (max-width: 768px) {
+    .study-content {
+        flex-direction: column; 
+        gap: 20px;
+    }
+
+    
+    .nov-cal-std7, .nov-cal-std6 {
+        width: 60%; 
+        max-width: none; 
+        height: auto; 
+    }
+
+    .btn {
+        font-size: 14px; 
+        padding: 8px 16px; 
+    }
+
+   
+    .study-title p {
+        font-size: 24px; 
+    }
+
+    .nov-cal-std7 p, .nov-cal-std6 p {
+        font-size: 13px; 
+    }
+}
+.nov-cal-std7 {
+    background-image: linear-gradient(to bottom right, #727272, #005f72);
+}
+.nov-cal-std6 {
+    background-image: linear-gradient(to bottom right, #727272, #007204);
+}
+@media (max-width: 480px) {
+
+    .btn {
+        font-size: 12px; 
+        padding: 6px 12px; 
+    }
+
+    .nov-cal-std7, .nov-cal-std6 {
+        padding: 15px; 
+    }
+
+    .study-title p {
+        font-size: 20px;
+    }
+}
+.confessions p {
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+}
+
+.confession-card {
+    background: linear-gradient(to right, #000, #51002C);
+    color: white;
+    width: 90%; 
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.confession-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-image: linear-gradient(to bottom right, #51002C, #000);
+    align-items: center;
+    font-size: 20px;
+    height: 40px;
+}
+.confession-header p {
+    font-size: 20px;
+
+}
+.confession-header i {
+    margin-right: 10px;
+}
+
+.confession-content {
+    text-align: center;
+    font-size: 18px;
+    height: 0;
+    opacity: 0;
+    transition: height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+}
+
+.toggle-icon {
+    font-size: 24px; 
+    color: white; 
+    cursor: pointer; 
+    margin-left: auto; 
+    transition: transform 0.3s ease; 
+}
+
+.minimized .confession-content {
+    height: 0; 
+    opacity: 0;
+}
+
+.maximized .confession-content {
+    height: 200px; 
+    opacity: 1;
+}
+
+.maximized .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .confession-card {
+        width: 95%; 
+    }
+
+    .confession-header {
+        font-size: 18px;
+        padding: 10px 15px; 
+    }
+
+    .toggle-icon {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .confession-header {
+        font-size: 16px; 
+        padding: 8px 10px;
+    }
+
+    .toggle-icon {
+        font-size: 20px;
+    }
+
+    .confession-content {
+        font-size: 16px;
+    }
+}
+.rumors p {
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+}
+.rumor-card {
+    background: linear-gradient(to right, #000, #464646);
+    color: white;
+    width: 90%; 
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.rumor-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-image: linear-gradient(to bottom right, #434343, #000);
+    align-items: center;
+    font-size: 20px;
+    height: 40px;
+}
+.rumor-header p {
+    font-size: 20px;
+
+}
+.rumor-header i {
+    margin-right: 10px;
+}
+.rumor-content {
+    text-align: center;
+    font-size: 18px;
+    height: 0;
+    opacity: 0;
+    transition: height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+}
+
+.toggle-icon {
+    font-size: 24px; 
+    color: white; 
+    cursor: pointer; 
+    margin-left: auto; 
+    transition: transform 0.3s ease; 
+}
+
+.minimized .rumor-content {
+    height: 0; 
+    opacity: 0;
+}
+
+.maximized .rumor-content {
+    height: 200px; 
+    opacity: 1;
+}
+
+.maximized .toggle-icon {
+    transform: rotate(180deg);
+}
+
+
+@media (max-width: 768px) {
+    .rumor-card {
+        width: 95%; 
+    }
+
+    .rumor-header {
+        font-size: 18px;
+        padding: 10px 15px; 
+    }
+
+    .toggle-icon {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .rumor-header {
+        font-size: 16px; 
+        padding: 8px 10px;
+    }
+
+    .toggle-icon {
+        font-size: 20px;
+    }
+
+    .rumor-content {
+        font-size: 16px;
+    }
+}
+.event-contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.event p {
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+}
+.event1 h2 {
+    font-size: 20px;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+.event1 {
+    background-image: linear-gradient(to bottom, #007204 10%, #013903 25%, #000000 90%);
+    width: 258px;
+    height: 170px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+.event1 p {
+    font-size: 15px;
+}
+.event2 h2 {
+    font-size: 20px;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+.event2 {
+    background-image: linear-gradient(to bottom, #724800 10%, #342101 25%, #000000 90%);
+    width: 258px;
+    height: 170px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+.event2 p {
+    font-size: 15px;
+}
+.updates-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.updates-section p {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.updates-box {
+    background: linear-gradient(to bottom, #000 2%, #575656 95%); 
+    border-radius: 10px; 
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7); 
+    padding: 20px;
+    width: 700px; 
+    max-width: 90%; 
+    height: 400px; 
+    display: flex;
+
+}
+
+
+.updates-box p {
+    font-size: 18px;
+    color: #bbb; 
+    margin: 5px 0;
+    text-align: left; 
+}
+
+.updates-box p strong {
+    color: #fff; 
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    .updates-section h2 {
+        font-size: 28px; 
+    }
+    
+    .updates-box p {
+        font-size: 16px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .updates-section h2 {
+        font-size: 24px; 
+    }
+
+    .updates-box p {
+        font-size: 14px; 
+    }
+}

@@ -1,0 +1,238 @@
+body {
+    background-color: #191919;
+    font-family: 'Inder', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    display: block;
+    border-top: 10px;
+    border-bottom: 10px solid #151515;
+    border-radius: 20px;
+    transition: padding 0.1s ease-out, border-bottom 0.1s ease-out; 
+}
+
+.sidebar a:hover {
+    padding: 10px 20px; 
+    color: rgb(255, 255, 255);
+    border-bottom: 5px solid #151515;  
+}
+
+.sidebar a.after-hover {
+    animation: returnToOriginal 0.2s forwards; 
+}
+
+@keyframes returnToOriginal {
+    from {
+        padding: 10px 20px; 
+        border-bottom: 5px solid #151515; 
+    }
+    to {
+        padding: 15px 20px; 
+        border-bottom: 10px solid #151515; 
+    }
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar.active {
+    left: 0;
+}
+.close-btn p {
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+.openbtn {
+    cursor: pointer;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    transition: .3s ease;
+    margin-left: 20px;
+}
+
+.openbtn:hover {
+    color: #9a9a9a;
+}
+.contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px; 
+    margin-top: 100px;
+}
+
+.form-container {
+    position: relative; 
+    background-color: rgba(51, 51, 51, 0.5); 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%; 
+    max-width: 1000px; 
+    margin-top: -50px; 
+}
+
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 30px; 
+    font-size: 1.8rem; 
+}
+
+.form-container label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1rem;
+}
+
+.form-container input, 
+.form-container textarea, 
+.form-container button {
+    width: 100%;
+    padding: 7px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-container input, 
+.form-container textarea {
+    background-color: #555;
+    color: #fff;
+}
+
+.form-container button {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 15px;
+        width: 95%;
+        margin-top: -30px; 
+    }
+
+    .form-container h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .form-container label {
+        font-size: 0.9rem;
+    }
+
+    .form-container input, 
+    .form-container textarea, 
+    .form-container button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contents {
+        padding: 20px;
+    }
+
+    .form-container {
+        padding: 10px;
+        margin-top: -20px; 
+    }
+
+    .form-container h1 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .form-container input, 
+    .form-container textarea, 
+    .form-container button {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+}

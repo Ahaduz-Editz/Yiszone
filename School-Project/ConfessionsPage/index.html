@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Yale.</title>
+</head>
+<body>
+    <header class="header">
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <div class="close-btn" id="close-btn">×</div>
+            <a href="../index.html"><i class='bx bx-home-alt' ></i> Home</a>
+            <a href="../StudyPage/index.html"><i class='bx bx-book' ></i> Study</a>
+            <a href="../RumorsPage/index.html"><i class='bx bx-chat' ></i> Rumors</a>
+            <a href="../EventsPage/index.html"><i class='bx bx-calendar' ></i> Events</a>
+            <a href="../ConfessionsPage/index.html"><i class='bx bx-heart' ></i> Confessions</a>
+            <a href="../UpdatesPage/index.html"><i class='bx bx-up-arrow-alt' ></i> Updates</a>
+        </div>
+
+        <!-- Hamburger Menu -->
+        <button class="openbtn" id="hamburger">
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </button>
+
+        <a href="../School-Project/index.html" class="logo">Yale International School.</a>
+        <div id="overlay" class="overlay" onclick="closeNav()"></div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-card">
+                <div class="hero-card-text">
+                    <p>Here you will find all the confessions given by others. <br><br>
+                        We have the most possible security produced. <br><br>
+                        The sender is highly secured. We provide the highest <br>
+                        security in this field. <br><br>       
+                        You can post by clicking ‘New Post’ <br>
+                        The Confessions gets updated every week. <br>          
+                        </p>
+
+                        <a href="../NewPostPage/index.html" class="newPost-btn"><i class='bx bx-plus'></i>New Post</a>
+                </div>
+                <div class="blur-block">
+                <div class="love love1"><i class='bx bxs-heart'  style='color:#FF00F5' ></i></div>
+                <div class="love love2"><i class='bx bxs-heart' style='color:#FF00F5' ></i></div>
+                <div class="love love3"><i class='bx bxs-heart' style='color:#FF00F5' ></i></div>
+                <div class="love love4"><i class='bx bxs-heart' style='color:#FF00F5' ></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contents">
+        <a href="../NewPostPage/index.html" class="newPost-btn btnC"><i class='bx bx-plus'></i><span>New Post</span></a>
+
+        <p>Confessions</p>
+        <div class="confession-contents">
+            <div class="confession-card minimized">
+                <div class="confession-header">
+                    <i class='bx bx-heart'></i> 
+                    <!--Confession Title-->
+                    <p>I likes C</p>
+                    <i class='bx bx-plus toggle-icon'></i> 
+                </div>
+                <div class="confession-content">
+                    <!--Confession Content-->
+                     Confession Details here
+                </div>
+            </div>
+            <div class="confession-card minimized">
+                <div class="confession-header">
+                    <i class='bx bx-heart'></i> 
+                                <!--Confession Title-->
+                    <p>I likes B</p>
+                    <i class='bx bx-plus toggle-icon'></i> 
+                </div>
+                <div class="confession-content">
+                    <!--Confession Content-->
+                     Confession Details here
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+   <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+body {
+    background-color: #191919;
+    font-family: 'Inder', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    display: block;
+    border-top: 10px;
+    border-bottom: 10px solid #151515;
+    border-radius: 20px;
+    transition: padding 0.1s ease-out, border-bottom 0.1s ease-out; 
+}
+
+.sidebar a:hover {
+    padding: 10px 20px; 
+    color: rgb(255, 255, 255);
+    border-bottom: 5px solid #151515;  
+}
+
+.sidebar a.after-hover {
+    animation: returnToOriginal 0.2s forwards; 
+}
+
+@keyframes returnToOriginal {
+    from {
+        padding: 10px 20px; 
+        border-bottom: 5px solid #151515; 
+    }
+    to {
+        padding: 15px 20px; 
+        border-bottom: 10px solid #151515; 
+    }
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar.active {
+    left: 0;
+}
+.close-btn p {
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+.openbtn {
+    cursor: pointer;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    transition: .3s ease;
+    margin-left: 20px;
+}
+
+.openbtn:hover {
+    color: #9a9a9a;
+}
+
+
+.hero-card {
+    background-image: linear-gradient(#000000, #4F0051);
+    height: 400px;
+    width: 800px;
+    margin: 100px auto; 
+    border-radius: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    font-size: 18px ;
+}
+
+.hero-card-text {
+    text-align: center;
+    padding: 20px;
+    position: relative;  
+    z-index: 2;
+}
+.blur-block {
+    position: absolute;
+    filter: blur(15px);
+    align-items: center;
+    justify-content: center;
+}
+.love {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 100;
+    font-size: 200px;
+    animation: move 4s infinite ease-in-out;
+    animation: float 4s infinite ease-in-out, move 4s infinite ease-in-out;
+    filter: blur(1px);
+    z-index: 1;
+}
+.love1 {
+    transform: rotate(330deg);
+    top: -150px;
+    left: 200px;
+}
+.love2  {
+    transform: rotate(30deg);
+    top: -100px;
+    left: -400px;
+}
+.love3 {
+    transform: rotate(-30deg);
+    top: -200px;
+    left: -170px;
+}
+.love4 {
+    transform: rotate(-330deg);
+    top: -20px;
+}
+.newPost-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #00A3FF;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s ease;
+    display: block;
+    width: max-content;
+    margin: 20px auto; 
+}
+
+.newPost-btn:hover {
+    background-color: #0087c6;
+}
+.btnC {
+    margin-right: 100px;
+}
+.contents p {
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+}
+
+.confession-card {
+    background: linear-gradient(to right, #000, #51002C);
+    color: white;
+    width: 90%; 
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.confession-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-image: linear-gradient(to bottom right, #51002C, #000);
+    align-items: center;
+    font-size: 20px;
+    height: 40px;
+}
+.confession-header p {
+    font-size: 20px;
+
+}
+.confession-header i {
+    margin-right: 10px;
+}
+
+.confession-content {
+    text-align: center;
+    font-size: 18px;
+    height: 0;
+    opacity: 0;
+    transition: height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+}
+
+.toggle-icon {
+    font-size: 24px; 
+    color: white; 
+    cursor: pointer; 
+    margin-left: auto; 
+    transition: transform 0.3s ease; 
+}
+
+.minimized .confession-content {
+    height: 0; 
+    opacity: 0;
+}
+
+.maximized .confession-content {
+    height: 200px; 
+    opacity: 1;
+}
+
+.maximized .toggle-icon {
+    transform: rotate(180deg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .confession-card {
+        width: 95%; 
+    }
+
+    .confession-header {
+        font-size: 18px;
+        padding: 10px 15px; 
+    }
+
+    .toggle-icon {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .confession-header {
+        font-size: 16px; 
+        padding: 8px 10px;
+    }
+
+    .toggle-icon {
+        font-size: 20px;
+    }
+
+    .confession-content {
+        font-size: 16px;
+    }
+}

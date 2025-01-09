@@ -1,0 +1,355 @@
+body {
+    background-color: #191919;
+    font-family: 'Inder', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    background-color: #000000;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 20px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background-color: #000000;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    display: block;
+    border-top: 10px;
+    border-bottom: 10px solid #151515;
+    border-radius: 20px;
+    transition: padding 0.1s ease-out, border-bottom 0.1s ease-out; 
+}
+
+.sidebar a:hover {
+    padding: 10px 20px; 
+    color: rgb(255, 255, 255);
+    border-bottom: 5px solid #151515;  
+}
+
+.sidebar a.after-hover {
+    animation: returnToOriginal 0.2s forwards; 
+}
+
+@keyframes returnToOriginal {
+    from {
+        padding: 10px 20px; 
+        border-bottom: 5px solid #151515; 
+    }
+    to {
+        padding: 15px 20px; 
+        border-bottom: 10px solid #151515; 
+    }
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.sidebar.active {
+    left: 0;
+}
+.close-btn p {
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 30px;
+}
+
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    z-index: 999;
+}
+
+.overlay.active {
+    display: block;
+}
+.openbtn {
+    cursor: pointer;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    border: none;
+    transition: .3s ease;
+    margin-left: 20px;
+}
+
+.openbtn:hover {
+    color: #9a9a9a;
+}
+
+
+
+.hero-card {
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0), rgb(57, 57, 57));
+    height: 400px;
+    width: 90%;
+    max-width: 800px;
+    margin: 100px auto; 
+    border-radius: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    font-size: 18px;
+    position: relative; 
+    overflow: hidden;
+}
+
+.hero-card-text {
+    text-align: center;
+    padding: 20px;
+    position: relative;  
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .hero-card {
+        height: 300px;
+    }
+
+    .hero-card-text {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-card {
+        height: 250px;
+    }
+
+    .hero-card-text {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+.particle {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    border-radius: 40px;
+    box-shadow: 0 0 20px rgba(221, 133, 11, 0.989);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100;
+    animation: move 4s infinite ease-in-out;
+    animation: float 4s infinite ease-in-out;
+    filter: blur(10px);
+}
+
+.particle1 { width: 10px; height: 10px; top: 5%; left: 5%; animation-delay: 0.5s; }
+.particle2 { width: 15px; height: 15px; top: 5%; left: 85%; animation-delay: 0.5s; }
+.particle3 { width: 8px; height: 8px; top: 10%; left: 20%; animation-delay: 1s; }
+.particle4 { width: 12px; height: 12px; top: 75%; left: 70%; animation-delay: 1.5s; }
+.particle5 { width: 10px; height: 10px; top: 90%; left: 10%; animation-delay: 2s; }
+.particle6 { width: 14px; height: 14px; top: 20%; left: 2%; animation-delay: 2.5s; }
+.particle7 { width: 9px; height: 9px; top: 2%; left: 95%; animation-delay: 3s; }
+.particle8 { width: 11px; height: 11px; top: 85%; left: 95%; animation-delay: 3.5s; }
+.particle9 { width: 13px; height: 13px; top: 15%; left: 2%; animation-delay: 4s; }
+.particle10 { width: 16px; height: 16px; top: 25%; left: 80%; animation-delay: 4.5s; }
+.particle11 { width: 7px; height: 7px; top: 30%; left: 25%; animation-delay: 5s; }
+.particle12 { width: 10px; height: 10px; top: 40%; left: 85%; animation-delay: 5.5s; }
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 0.8; }
+    50% { transform: translateY(-20px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 0.8; }
+}
+
+.newPost-btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #00A3FF;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s ease;
+    display: block;
+    width: max-content;
+    margin: 20px auto; 
+}
+
+.newPost-btn:hover {
+    background-color: #0087c6;
+}
+
+@media (max-width: 768px) {
+    .newPost-btn {
+        font-size: 14px;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .newPost-btn {
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+}
+
+.btnC {
+    margin-right: 100px;
+}
+
+@media (max-width: 768px) {
+    .btnC {
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .btnC {
+        margin-right: 20px;
+    }
+}
+
+.rumors p {
+    font-size: 30px;
+    justify-content: center;
+    text-align: center;
+}
+.rumor-card {
+    background: linear-gradient(to right, #000, #464646);
+    color: white;
+    width: 90%; /* Make the card width flexible */
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.rumor-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-image: linear-gradient(to bottom right, #434343, #000);
+    align-items: center;
+    font-size: 20px;
+    height: 40px;
+}
+.rumor-header p {
+    font-size: 20px;
+
+}
+.rumor-header i {
+    margin-right: 10px;
+}
+
+.rumor-content {
+    text-align: center;
+    font-size: 18px;
+    height: 0;
+    opacity: 0;
+    transition: height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+}
+
+.toggle-icon {
+    font-size: 24px; 
+    color: white; 
+    cursor: pointer; 
+    margin-left: auto; 
+    transition: transform 0.3s ease; 
+}
+
+.minimized .rumor-content {
+    height: 0; 
+    opacity: 0;
+}
+
+.maximized .rumor-content {
+    height: 200px; 
+    opacity: 1;
+}
+
+.maximized .toggle-icon {
+    transform: rotate(180deg);
+}
+
+
+@media (max-width: 768px) {
+    .rumor-card {
+        width: 95%; 
+    }
+
+    .rumor-header {
+        font-size: 18px;
+        padding: 10px 15px; 
+    }
+
+    .toggle-icon {
+        font-size: 22px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .rumor-header {
+        font-size: 16px; 
+        padding: 8px 10px;
+    }
+
+    .toggle-icon {
+        font-size: 20px;
+    }
+
+    .rumor-content {
+        font-size: 16px;
+    }
+}

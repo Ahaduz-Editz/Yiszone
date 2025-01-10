@@ -58,7 +58,7 @@ document.getElementById('postForm').addEventListener('submit', async function (e
     };
 
     try {
-        const response = await fetch('netlify/functions/sendEmail.js', {
+        const response = await fetch('/workspaces/Yiszone/netlify/functions/sendEmail.js', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

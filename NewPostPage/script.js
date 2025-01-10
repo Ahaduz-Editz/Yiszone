@@ -77,6 +77,7 @@ document.getElementById('postForm').addEventListener('submit', async function (e
         alert('Something went wrong! Please try again.');
     }
 });
+console.log('Incoming request:', event.body);
 
   
   

@@ -58,7 +58,7 @@ document.getElementById('postForm').addEventListener('submit', async function (e
     };
 
     try {
-        const response = await fetch('/workspaces/Yiszone/netlify/functions/sendEmail.js', {
+        const response = await fetch('/netlify/functions/sendEmail', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -77,7 +77,8 @@ document.getElementById('postForm').addEventListener('submit', async function (e
         alert('Something went wrong! Please try again.');
     }
 });
-console.log('Incoming request:', event.body);
+
+
 
   
   

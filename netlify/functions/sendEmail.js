@@ -5,7 +5,7 @@ exports.handler = async (event) => {
         return {
             statusCode: 405,
             headers: {
-                'Access-Control-Allow-Origin': '*', // Allow all origins
+                'Access-Control-Allow-Origin': '*',
             },
             body: 'Method Not Allowed',
         };
@@ -13,7 +13,6 @@ exports.handler = async (event) => {
 
     const data = JSON.parse(event.body);
 
-    // Configure the transporter
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -22,10 +21,9 @@ exports.handler = async (event) => {
         },
     });
 
-    // Configure the email options
     const mailOptions = {
         from: `"Post Submission" <${process.env.SMTP_USER}>`,
-        to: 'yiszoneemail@gmail.com', // Replace with your email
+        to: 'yiszoneemail@gmail.com',
         subject: `New Post Submission: ${data.type}`,
         text: `You've received a new post submission:\n\nType: ${data.type}\nEmail: ${data.email}\nDetails: ${data.details}`,
         html: `
@@ -37,13 +35,12 @@ exports.handler = async (event) => {
     };
 
     try {
-        // Send the email
         await transporter.sendMail(mailOptions);
 
         return {
             statusCode: 200,
             headers: {
-                'Access-Control-Allow-Origin': '*', // Allow all origins
+                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ message: 'Email sent successfully' }),
@@ -54,12 +51,10 @@ exports.handler = async (event) => {
         return {
             statusCode: 500,
             headers: {
-                'Access-Control-Allow-Origin': '*', // Allow all origins
+                'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ message: 'Failed to send email', error: error.message }),
         };
     }
 };
-console.log('Incoming request:', event.body);
-

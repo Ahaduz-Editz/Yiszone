@@ -39,12 +39,10 @@
     <section class="contents">
         <div class="form-container">
             <h1>Submit a Post</h1>
-            <form id="postForm">
+            <form name="contact" data-netlify="true" id="postForm">
+                <input type="hidden" name="form-name" value="contact"/>
               <label for="type">Type of Post:</label>
               <input type="text" id="type" name="type" placeholder="Enter post type" required>
-              
-              <label for="email">Email Address: (No need to use a verified email)</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email" required>
               
               <label for="details">Details:</label>
               <textarea id="details" name="details" placeholder="Enter post details" rows="5" required></textarea>

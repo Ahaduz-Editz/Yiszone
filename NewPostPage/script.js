@@ -48,35 +48,7 @@ document.querySelectorAll('.toggle-icon').forEach(icon => {
     });
 });
 
-document.getElementById('postForm').addEventListener('submit', async function (event) {
-    event.preventDefault(); // Prevent default form submission
 
-    const formData = {
-        type: document.getElementById('type').value,
-        email: document.getElementById('email').value,
-        details: document.getElementById('details').value,
-    };
-
-    try {
-        const response = await fetch('/netlify/functions/sendEmail', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData),
-        });
-
-        if (response.ok) {
-            alert('Post submitted successfully!');
-            document.getElementById('postForm').reset();
-        } else {
-            const error = await response.json();
-            alert(`Error: ${error.message}`);
-        }
-    } catch (error) {
-        alert('Something went wrong! Please try again.');
-    }
-});
 
 
 

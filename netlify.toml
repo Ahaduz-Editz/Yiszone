@@ -1,2 +1,0 @@
-[build]
-  functions = "netlify/functions" # Match the location of sendEmail.js

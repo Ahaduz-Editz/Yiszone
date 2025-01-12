@@ -375,11 +375,12 @@ body {
 }
 
 
-.nov-cal-std7, .nov-cal-std6 {
+.cal {
+    position: relative;
     background-size: cover;
     width: 100%; 
-    max-width: 258px; 
-    height: 170px;
+    max-width: 258px ; 
+    height: 170px auto;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
@@ -388,7 +389,7 @@ body {
 }
 
 
-.nov-cal-std7 p, .nov-cal-std6 p {
+.cal {
     font-size: 15px;
     display: flex;
     justify-content: center;
@@ -445,7 +446,7 @@ body {
     }
 
     
-    .nov-cal-std7, .nov-cal-std6 {
+    .cal {
         width: 60%; 
         max-width: none; 
         height: auto; 
@@ -465,10 +466,10 @@ body {
         font-size: 13px; 
     }
 }
-.nov-cal-std7 {
+.std7 {
     background-image: linear-gradient(to bottom right, #727272, #005f72);
 }
-.nov-cal-std6 {
+.std6 {
     background-image: linear-gradient(to bottom right, #727272, #007204);
 }
 @media (max-width: 480px) {
@@ -478,7 +479,7 @@ body {
         padding: 6px 12px; 
     }
 
-    .nov-cal-std7, .nov-cal-std6 {
+    .cal, .cal {
         padding: 15px; 
     }
 
